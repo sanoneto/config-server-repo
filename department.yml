@@ -24,7 +24,7 @@ logging:
 
 spring:
   profiles:
-    active: dev
+    active: local
   datasource:
     url: jdbc:mysql://localhost:3306/department
     username: root
