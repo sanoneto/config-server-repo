@@ -1,0 +1,54 @@
+server:
+  port: 9081
+  error:
+    include-message: always
+
+# permit export  every endpoint exist on the microservice
+#actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,beans,mappings,conditions,metrics,configprops,info,env,threaddump,loggers
+  info:
+    env:
+      enabled: true
+  endpoint:  #para teste  --> http://localhost:9081/actuator/health
+    health:
+      show-details: always
+
+    ## tratamento de logs
+logging:
+  level:
+    org.springframework: ERROR
+
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/department
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  main:
+    banner-mode: off
+### spring Cloud Netflix Eureka
+eureka:
+  instance:
+    hostname: localhost
+    leaseRenewalIntervalInSeconds: 10
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+      healthcheck:
+        enabled: true
+    region: default
+    registryFetchIntervalSeconds: 5
+    availabilityZones:
+      default: ${APPLICATION_DOMAIN:${DOMAIN:defaultZone}}
