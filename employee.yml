@@ -17,7 +17,9 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-
+  boot:
+    message: hello, employee service
+    
   main:
     banner-mode: off
 
