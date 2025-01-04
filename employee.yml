@@ -18,7 +18,7 @@ spring:
       ddl-auto: update
     show-sql: true
   boot:
-    message: hello, employee service Spring cloud bus demo
+    message: hello, employee service Spring cloud bus demo ola
     
   main:
     banner-mode: off
