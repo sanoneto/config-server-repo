@@ -29,7 +29,7 @@ spring:
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
   boot:
-    message: hello, department service update
+    message: hello, department service Spring cloud bus demo
   jpa:
     hibernate:
       ddl-auto: update
